@@ -1,4 +1,4 @@
-/* #region Aplicacion Frontend: punto de entrada React */
+/* #region Logica Aplicacion Frontend: punto de entrada React */
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./app/App.jsx";
@@ -9,4 +9,4 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <App />
   </React.StrictMode>,
 );
-/* #endregion Aplicacion Frontend: punto de entrada React */
+/* #endregion Logica Aplicacion Frontend: punto de entrada React */

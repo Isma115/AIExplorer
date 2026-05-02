@@ -1,0 +1,67 @@
+{
+    "regions": {
+        "Estructura principal de la página": {
+            "items": [
+                {
+                    "key": "region::/Users/ismaelmoraledalopez/Desktop/pruebas/AIExplorer/frontend/pages/home/HomePage.jsx::1:8:Componentes Pagina Inicio: dependencias",
+                    "file_path": "/Users/ismaelmoraledalopez/Desktop/pruebas/AIExplorer/frontend/pages/home/HomePage.jsx",
+                    "file_rel_path": "frontend/pages/home/HomePage.jsx",
+                    "header": "Componentes Pagina Inicio: dependencias",
+                    "type": "region",
+                    "name": "Componentes Pagina Inicio: dependencias",
+                    "start_line": 1,
+                    "end_line": 8,
+                    "order_index": 0
+                },
+                {
+                    "key": "region::/Users/ismaelmoraledalopez/Desktop/pruebas/AIExplorer/frontend/pages/home/HomePage.jsx::10:71:Componentes Pagina Inicio: componente principal",
+                    "file_path": "/Users/ismaelmoraledalopez/Desktop/pruebas/AIExplorer/frontend/pages/home/HomePage.jsx",
+                    "file_rel_path": "frontend/pages/home/HomePage.jsx",
+                    "header": "Componentes Pagina Inicio: componente principal",
+                    "type": "region",
+                    "name": "Componentes Pagina Inicio: componente principal",
+                    "start_line": 10,
+                    "end_line": 71,
+                    "order_index": 1
+                },
+                {
+                    "key": "region::/Users/ismaelmoraledalopez/Desktop/pruebas/AIExplorer/frontend/pages/home/styles/home.css::1:52:Estilos Pagina Inicio: contenedor principal y ambiente",
+                    "file_path": "/Users/ismaelmoraledalopez/Desktop/pruebas/AIExplorer/frontend/pages/home/styles/home.css",
+                    "file_rel_path": "frontend/pages/home/styles/home.css",
+                    "header": "Estilos Pagina Inicio: contenedor principal y ambiente",
+                    "type": "region",
+                    "name": "Estilos Pagina Inicio: contenedor principal y ambiente",
+                    "start_line": 1,
+                    "end_line": 52,
+                    "order_index": 2
+                }
+            ]
+        },
+        "Sección lateral izquierda": {
+            "items": [
+                {
+                    "key": "region::/Users/ismaelmoraledalopez/Desktop/pruebas/AIExplorer/frontend/pages/home/components/ChatSidebar.jsx::1:55:Componentes Pagina Inicio: panel lateral de conversaciones",
+                    "file_path": "/Users/ismaelmoraledalopez/Desktop/pruebas/AIExplorer/frontend/pages/home/components/ChatSidebar.jsx",
+                    "file_rel_path": "frontend/pages/home/components/ChatSidebar.jsx",
+                    "header": "Componentes Pagina Inicio: panel lateral de conversaciones",
+                    "type": "region",
+                    "name": "Componentes Pagina Inicio: panel lateral de conversaciones",
+                    "start_line": 1,
+                    "end_line": 55,
+                    "order_index": 0
+                },
+                {
+                    "key": "region::/Users/ismaelmoraledalopez/Desktop/pruebas/AIExplorer/frontend/pages/home/styles/home.css::54:171:Estilos Pagina Inicio: panel lateral de conversaciones",
+                    "file_path": "/Users/ismaelmoraledalopez/Desktop/pruebas/AIExplorer/frontend/pages/home/styles/home.css",
+                    "file_rel_path": "frontend/pages/home/styles/home.css",
+                    "header": "Estilos Pagina Inicio: panel lateral de conversaciones",
+                    "type": "region",
+                    "name": "Estilos Pagina Inicio: panel lateral de conversaciones",
+                    "start_line": 54,
+                    "end_line": 171,
+                    "order_index": 1
+                }
+            ]
+        }
+    }
+}

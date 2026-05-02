@@ -1,13 +1,13 @@
-/* #region Pagina Inicio: dependencias */
+/* #region Componentes Pagina Inicio: dependencias */
 import { useHomeChat } from "./logic/home.js";
 import { ChatHeader } from "./components/ChatHeader.jsx";
 import { ChatHistory } from "./components/ChatHistory.jsx";
 import { ChatComposer } from "./components/ChatComposer.jsx";
 import { ChatSidebar } from "./components/ChatSidebar.jsx";
 import "./styles/home.css";
-/* #endregion Pagina Inicio: dependencias */
+/* #endregion Componentes Pagina Inicio: dependencias */
 
-/* #region Pagina Inicio: componente principal */
+/* #region Componentes Pagina Inicio: componente principal */
 export default function HomePage() {
   const {
     draft,
@@ -68,4 +68,4 @@ export default function HomePage() {
     </div>
   );
 }
-/* #endregion Pagina Inicio: componente principal */
+/* #endregion Componentes Pagina Inicio: componente principal */

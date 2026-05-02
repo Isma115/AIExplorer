@@ -1,13 +1,13 @@
-/* #region Pagina Inicio: dependencias */
+/* #region Logica Pagina Inicio: dependencias */
 import { useEffect, useMemo, useState } from "react";
-/* #endregion Pagina Inicio: dependencias */
+/* #endregion Logica Pagina Inicio: dependencias */
 
-/* #region Pagina Inicio: constantes del almacenamiento local */
+/* #region Logica Pagina Inicio: constantes del almacenamiento local */
 const conversationsStorageKey = "aiexplorer-home-conversations";
 const activeConversationStorageKey = "aiexplorer-home-active-conversation";
-/* #endregion Pagina Inicio: constantes del almacenamiento local */
+/* #endregion Logica Pagina Inicio: constantes del almacenamiento local */
 
-/* #region Pagina Inicio: respuestas simuladas */
+/* #region Logica Pagina Inicio: respuestas simuladas */
 const keywordReplies = [
   {
     test: /(hola|buenas|hey)/i,
@@ -32,9 +32,9 @@ const fallbackReplies = [
   "Este flujo local es suficiente hasta que exista persistencia real en el proyecto.",
   "La separacion actual evita mezclar logica de interfaz con responsabilidades de datos.",
 ];
-/* #endregion Pagina Inicio: respuestas simuladas */
+/* #endregion Logica Pagina Inicio: respuestas simuladas */
 
-/* #region Pagina Inicio: utilidades del chat */
+/* #region Logica Pagina Inicio: utilidades del chat */
 function createConversationTitle(messageCount, firstUserMessage) {
   if (firstUserMessage) {
     return firstUserMessage.length > 34
@@ -130,9 +130,9 @@ function loadInitialChatState() {
     initialActiveConversationId: loadStoredActiveConversationId(initialConversations),
   };
 }
-/* #endregion Pagina Inicio: utilidades del chat */
+/* #endregion Logica Pagina Inicio: utilidades del chat */
 
-/* #region Pagina Inicio: hook de chat */
+/* #region Logica Pagina Inicio: hook de chat */
 export function useHomeChat() {
   const [initialChatState] = useState(() => loadInitialChatState());
   const [draft, setDraft] = useState("");
@@ -266,4 +266,4 @@ export function useHomeChat() {
     selectConversation,
   };
 }
-/* #endregion Pagina Inicio: hook de chat */
+/* #endregion Logica Pagina Inicio: hook de chat */

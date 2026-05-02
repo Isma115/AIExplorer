@@ -1,4 +1,4 @@
-/* #region Aplicacion Global: variables y tema base */
+/* #region Estilos Aplicacion Global: variables y tema base */
 :root {
   --color-base-990: #07111b;
   --color-base-950: #0b1621;
@@ -28,9 +28,9 @@
   --font-body: "IBM Plex Sans", "SF Pro Display", "Segoe UI", sans-serif;
   --font-mono: "IBM Plex Mono", "SFMono-Regular", "Menlo", monospace;
 }
-/* #endregion Aplicacion Global: variables y tema base */
+/* #endregion Estilos Aplicacion Global: variables y tema base */
 
-/* #region Aplicacion Global: reinicio y elementos base */
+/* #region Estilos Aplicacion Global: reinicio y elementos base */
 *,
 *::before,
 *::after {
@@ -92,9 +92,9 @@ textarea {
 a {
   color: inherit;
 }
-/* #endregion Aplicacion Global: reinicio y elementos base */
+/* #endregion Estilos Aplicacion Global: reinicio y elementos base */
 
-/* #region Aplicacion Global: utilidades reutilizables */
+/* #region Estilos Aplicacion Global: utilidades reutilizables */
 .panel {
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.015)),
@@ -115,4 +115,4 @@ a {
   white-space: nowrap;
   border: 0;
 }
-/* #endregion Aplicacion Global: utilidades reutilizables */
+/* #endregion Estilos Aplicacion Global: utilidades reutilizables */

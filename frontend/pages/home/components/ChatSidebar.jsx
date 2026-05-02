@@ -1,4 +1,4 @@
-/* #region Pagina Inicio: panel lateral de conversaciones */
+/* #region Componentes Pagina Inicio: panel lateral de conversaciones */
 function formatConversationTimestamp(timestamp) {
   return new Intl.DateTimeFormat("es-ES", {
     day: "2-digit",
@@ -52,4 +52,4 @@ export function ChatSidebar({
     </aside>
   );
 }
-/* #endregion Pagina Inicio: panel lateral de conversaciones */
+/* #endregion Componentes Pagina Inicio: panel lateral de conversaciones */

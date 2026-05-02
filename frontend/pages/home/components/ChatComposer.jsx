@@ -1,4 +1,4 @@
-/* #region Pagina Inicio: formulario de envio */
+/* #region Componentes Pagina Inicio: formulario de envio */
 import { useEffect, useRef } from "react";
 
 export function ChatComposer({ draft, isSending, onDraftChange, onSubmit }) {
@@ -70,4 +70,4 @@ export function ChatComposer({ draft, isSending, onDraftChange, onSubmit }) {
     </section>
   );
 }
-/* #endregion Pagina Inicio: formulario de envio */
+/* #endregion Componentes Pagina Inicio: formulario de envio */

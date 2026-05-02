@@ -65,3 +65,17 @@ o backend:
 region Backend: controlador de usuarios
 region Backend: modelo de usuarios
 region Backend: ruta de usuarios
+
+
+Como añadido para cada functionalidad o parte de la aplicación, quiero tener un markdown para cada functionalidad indicando la lista de regiones de código que participan en dicha funcionalidad. Solo un markdown llamado funcionalidades.md que contendrá el título de cada parte del proyecto y sus correspondientes regiones de código asignadas, pero para cada trozo funcional de la aplicación sin acaparar varias, de esta manera atomizar más y tener mayor control sobre el código. Por ejemplo: 
+
+Vista de Página principal:
+region Estilos Página Inicio: estilos para la página principal de inicio
+region Componentes Página Inicio: componente principal de la página de inicio
+
+Vista de Página principal iniciar sesión:
+region Estilos Página Inicio: estilos para el popup de iniciar sesión
+region Componentes Página Inicio: popup de iniciar sesión
+region Lógica Página Inicio: popup de iniciar sesión
+
+Eso para cada funcionalidad independiente del proyecto, de tal manera que podamos recoger con herramientas externas el código por regiones seleccionando la funcionalidad que queremos revisar o editar con esas herramientas externas sin recoger código innecesario

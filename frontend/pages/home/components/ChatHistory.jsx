@@ -1,4 +1,4 @@
-/* #region Pagina Inicio: listado de mensajes */
+/* #region Componentes Pagina Inicio: listado de mensajes */
 import { useEffect, useRef } from "react";
 
 export function ChatHistory({ messages }) {
@@ -37,4 +37,4 @@ export function ChatHistory({ messages }) {
     </div>
   );
 }
-/* #endregion Pagina Inicio: listado de mensajes */
+/* #endregion Componentes Pagina Inicio: listado de mensajes */

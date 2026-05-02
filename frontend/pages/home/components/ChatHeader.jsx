@@ -1,4 +1,4 @@
-/* #region Pagina Inicio: encabezado del chat */
+/* #region Componentes Pagina Inicio: encabezado del chat */
 export function ChatHeader() {
   return (
     <header className="chat-header panel">
@@ -23,4 +23,4 @@ export function ChatHeader() {
     </header>
   );
 }
-/* #endregion Pagina Inicio: encabezado del chat */
+/* #endregion Componentes Pagina Inicio: encabezado del chat */

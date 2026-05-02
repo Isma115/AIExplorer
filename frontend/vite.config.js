@@ -1,4 +1,4 @@
-/* #region Aplicacion Frontend: configuracion de Vite */
+/* #region Logica Aplicacion Frontend: configuracion de Vite */
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
@@ -8,4 +8,4 @@ export default defineConfig({
     port: 5173,
   },
 });
-/* #endregion Aplicacion Frontend: configuracion de Vite */
+/* #endregion Logica Aplicacion Frontend: configuracion de Vite */
