@@ -44,9 +44,12 @@ AIExplorer/
 2. Ejecuta `npm run dev` en la raiz.
 3. Abre la URL que indique Vite, normalmente `http://localhost:5173`.
 
+El comando `npm run dev` levanta:
+
+- `frontend` en `http://localhost:5173`
+- `backend` en `http://localhost:3001`
+
 ## Estado actual
 
 - `frontend`: interfaz de chat hecha con React, separada por pagina, componentes, logica y estilos. Toda la logica funcional actual del chat vive aqui.
-- `backend`: estructura reservada para futura gestion de base de datos mediante ORM. Sin logica activa mientras no exista persistencia.
-# AIExplorer
-# AIExplorer
+- `backend`: servidor Node ligero para recursos locales de modelos, con catalogo GGUF y descargas a `backend/models/local`, manteniendo la puerta abierta a futura capa ORM.

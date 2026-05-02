@@ -48,6 +48,26 @@
 - `region Componentes Pagina Inicio: panel lateral de conversaciones`
 - `region Estilos Pagina Inicio: panel lateral de conversaciones`
 
+### Cabecera lateral del usuario
+
+- `region Componentes Pagina Inicio: cabecera lateral del usuario`
+- `region Estilos Pagina Inicio: cabecera lateral del usuario`
+
+### Panel de modelos locales
+
+- `region Componentes Pagina Inicio: panel de modelos locales`
+- `region Estilos Pagina Inicio: panel de modelos locales`
+
+### Panel de ajustes
+
+- `region Componentes Pagina Inicio: panel de ajustes`
+- `region Estilos Pagina Inicio: panel de ajustes`
+
+### Modal de ajustes
+
+- `region Componentes Pagina Inicio: modal de ajustes`
+- `region Estilos Pagina Inicio: modal de ajustes`
+
 ### Historial de mensajes
 
 - `region Componentes Pagina Inicio: listado de mensajes`
@@ -87,3 +107,41 @@
 - `region Logica Pagina Inicio: dependencias`
 - `region Logica Pagina Inicio: utilidades del chat`
 - `region Logica Pagina Inicio: hook de chat`
+
+### Ajustes locales de la interfaz
+
+- `region Logica Pagina Inicio: constantes del almacenamiento local`
+- `region Logica Pagina Inicio: ajustes locales`
+- `region Logica Pagina Inicio: hook de chat`
+
+### Catalogo de modelos locales
+
+- `region Logica Pagina Inicio: constantes del almacenamiento local`
+- `region Logica Pagina Inicio: utilidades del catalogo de modelos`
+- `region Logica Pagina Inicio: hook de chat`
+
+## Backend de modelos locales
+
+### Servidor principal
+
+- `region Backend: dependencias del servidor`
+- `region Backend: utilidades de respuesta`
+- `region Backend: servidor principal`
+
+### Rutas de modelos
+
+- `region Backend: dependencias de rutas de modelos`
+- `region Backend: utilidades de rutas de modelos`
+- `region Backend: rutas de modelos`
+
+### Controlador del catalogo y descargas
+
+- `region Backend: dependencias del controlador de modelos`
+- `region Backend: constantes del controlador de modelos`
+- `region Backend: utilidades del controlador de modelos`
+- `region Backend: controlador de catalogo de modelos`
+- `region Backend: controlador de descarga de modelos`
+
+### Registro de modelos disponibles
+
+- `region Backend: catalogo de modelos locales`

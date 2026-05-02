@@ -6,8 +6,10 @@
     "backend"
   ],
   "scripts": {
-    "dev": "npm --workspace frontend run dev",
+    "dev": "node backend/dev-server.js",
     "dev:frontend": "npm --workspace frontend run dev",
+    "dev:backend": "node --watch backend/server.js",
+    "start:backend": "node backend/server.js",
     "build": "npm --workspace frontend run build"
   }
 }

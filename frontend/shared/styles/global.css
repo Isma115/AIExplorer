@@ -1,28 +1,28 @@
 /* #region Estilos Aplicacion Global: variables y tema base */
 :root {
-  --color-base-990: #07111b;
-  --color-base-950: #0b1621;
-  --color-base-900: #101c29;
-  --color-base-850: #162332;
-  --color-base-800: #1b2c3d;
-  --color-base-760: #24384c;
-  --color-accent-500: #6ee7d8;
-  --color-accent-400: #4bc9bb;
-  --color-violet-400: #8a9cff;
-  --color-text-100: #f3f7fb;
-  --color-text-200: #d4dde8;
-  --color-text-300: #9eb0c2;
-  --color-text-400: #7f93a8;
-  --color-line: rgba(255, 255, 255, 0.08);
-  --color-line-strong: rgba(255, 255, 255, 0.14);
-  --color-surface: rgba(16, 28, 41, 0.78);
-  --color-surface-strong: rgba(22, 35, 50, 0.94);
-  --color-surface-soft: rgba(255, 255, 255, 0.04);
-  --shadow-soft: 0 24px 80px rgba(0, 0, 0, 0.28);
-  --shadow-crisp: 0 14px 34px rgba(0, 0, 0, 0.24);
-  --shadow-glow: 0 0 0 1px rgba(110, 231, 216, 0.12), 0 18px 50px rgba(75, 201, 187, 0.1);
-  --radius-panel: 30px;
-  --radius-bubble: 24px;
+  --color-base-990: #0b1520;
+  --color-base-950: #102031;
+  --color-base-900: #13293d;
+  --color-base-850: #17344d;
+  --color-base-800: #1d4260;
+  --color-base-760: #245270;
+  --color-accent-500: #5f86ab;
+  --color-accent-400: #4f7599;
+  --color-violet-400: #45698b;
+  --color-text-100: #f3f4f6;
+  --color-text-200: #d7e3ee;
+  --color-text-300: #9bb1c6;
+  --color-text-400: #758ca2;
+  --color-line: rgba(95, 134, 171, 0.16);
+  --color-line-strong: rgba(95, 134, 171, 0.24);
+  --color-surface: rgba(16, 32, 49, 0.9);
+  --color-surface-strong: rgba(20, 41, 63, 0.96);
+  --color-surface-soft: rgba(95, 134, 171, 0.08);
+  --shadow-soft: 0 22px 60px rgba(0, 0, 0, 0.24);
+  --shadow-crisp: 0 12px 28px rgba(0, 0, 0, 0.2);
+  --shadow-glow: 0 0 0 1px rgba(95, 134, 171, 0.22), 0 16px 36px rgba(0, 0, 0, 0.18);
+  --radius-panel: 3px;
+  --radius-bubble: 2px;
   --page-width: min(1280px, calc(100vw - 32px));
   --font-display: "Söhne", "Avenir Next", "Segoe UI", sans-serif;
   --font-body: "IBM Plex Sans", "SF Pro Display", "Segoe UI", sans-serif;
@@ -39,35 +39,28 @@
 
 html {
   color-scheme: dark;
+  height: 100%;
+  overflow: hidden;
 }
 
 body {
   margin: 0;
   min-height: 100vh;
+  height: 100dvh;
   font-family: var(--font-body);
   color: var(--color-text-100);
-  background:
-    radial-gradient(circle at 12% 18%, rgba(110, 231, 216, 0.16), transparent 0 22%),
-    radial-gradient(circle at 84% 12%, rgba(138, 156, 255, 0.18), transparent 0 24%),
-    radial-gradient(circle at 72% 82%, rgba(75, 201, 187, 0.12), transparent 0 20%),
-    linear-gradient(180deg, var(--color-base-990) 0%, var(--color-base-950) 42%, #08111a 100%);
+  overflow: hidden;
+  background: #0b1520;
 }
 
 #root {
   min-height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
 }
 
 body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  opacity: 0.34;
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-  background-size: 72px 72px;
-  mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
+  content: none;
 }
 
 button,
@@ -96,12 +89,11 @@ a {
 
 /* #region Estilos Aplicacion Global: utilidades reutilizables */
 .panel {
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.015)),
-    var(--color-surface);
+  background: var(--color-surface);
   backdrop-filter: blur(22px);
   border: 1px solid var(--color-line);
   box-shadow: var(--shadow-soft);
+  border-radius: var(--radius-panel);
 }
 
 .sr-only {

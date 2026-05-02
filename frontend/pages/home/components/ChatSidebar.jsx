@@ -11,21 +11,20 @@ function formatConversationTimestamp(timestamp) {
 export function ChatSidebar({
   conversations,
   activeConversationId,
+  isCompact,
+  showPreview,
   onCreateConversation,
   onSelectConversation,
 }) {
   return (
-    <aside className="chat-sidebar panel">
+    <aside className={`chat-sidebar panel ${isCompact ? "chat-sidebar-compact" : ""}`}>
       <div className="sidebar-header">
         <div>
           <p className="sidebar-label">Conversaciones</p>
-          <p className="sidebar-caption">
-            Historial local del usuario guardado en este navegador.
-          </p>
         </div>
 
         <button className="sidebar-button" type="button" onClick={onCreateConversation}>
-          Nueva
+          +
         </button>
       </div>
 
@@ -41,9 +40,11 @@ export function ChatSidebar({
               onClick={() => onSelectConversation(conversation.id)}
             >
               <span className="conversation-card-title">{conversation.title}</span>
-              <span className="conversation-card-preview">{conversation.preview}</span>
+              {showPreview ? (
+                <span className="conversation-card-preview">{conversation.preview}</span>
+              ) : null}
               <span className="conversation-card-meta">
-                {conversation.messageCount} mensajes · {formatConversationTimestamp(conversation.updatedAt)}
+                {formatConversationTimestamp(conversation.updatedAt)}
               </span>
             </button>
           );
@@ -52,4 +53,5 @@ export function ChatSidebar({
     </aside>
   );
 }
+
 /* #endregion Componentes Pagina Inicio: panel lateral de conversaciones */

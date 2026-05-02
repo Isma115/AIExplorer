@@ -1,16 +1,16 @@
 /* #region Componentes Pagina Inicio: listado de mensajes */
 import { useEffect, useRef } from "react";
 
-export function ChatHistory({ messages }) {
+export function ChatHistory({ messages, shouldAutoScroll }) {
   const historyRef = useRef(null);
 
   useEffect(() => {
-    if (!historyRef.current) {
+    if (!historyRef.current || !shouldAutoScroll) {
       return;
     }
 
     historyRef.current.scrollTop = historyRef.current.scrollHeight;
-  }, [messages]);
+  }, [messages, shouldAutoScroll]);
 
   return (
     <div className="chat-history" ref={historyRef} aria-live="polite">

@@ -1,9 +1,10 @@
 /* #region Componentes Pagina Inicio: dependencias */
 import { useHomeChat } from "./logic/home.js";
-import { ChatHeader } from "./components/ChatHeader.jsx";
 import { ChatHistory } from "./components/ChatHistory.jsx";
 import { ChatComposer } from "./components/ChatComposer.jsx";
 import { ChatSidebar } from "./components/ChatSidebar.jsx";
+import { SidebarUserPanel } from "./components/SidebarUserPanel.jsx";
+import { SettingsModal } from "./components/SettingsModal.jsx";
 import "./styles/home.css";
 /* #endregion Componentes Pagina Inicio: dependencias */
 
@@ -15,11 +16,24 @@ export default function HomePage() {
     conversations,
     activeConversationId,
     isSending,
+    currentUser,
+    uiSettings,
+    availableModels,
+    selectedModelId,
+    selectedModel,
+    isLoadingModels,
+    modelsError,
+    isSettingsOpen,
     setDraft,
     sendMessage,
-    clearMessages,
     createConversation,
     selectConversation,
+    updateUiSetting,
+    selectModel,
+    downloadSelectedModel,
+    refreshModels,
+    openSettings,
+    closeSettings,
   } = useHomeChat();
 
   return (
@@ -29,42 +43,49 @@ export default function HomePage() {
 
       <main className="chat-experience">
         <div className="chat-layout">
-          <ChatSidebar
-            conversations={conversations}
-            activeConversationId={activeConversationId}
-            onCreateConversation={createConversation}
-            onSelectConversation={selectConversation}
-          />
+          <section className="sidebar-column">
+            <SidebarUserPanel currentUser={currentUser} onOpenSettings={openSettings} />
+
+            <ChatSidebar
+              conversations={conversations}
+              activeConversationId={activeConversationId}
+              isCompact={uiSettings.compactSidebar}
+              showPreview={uiSettings.showConversationPreview}
+              onCreateConversation={createConversation}
+              onSelectConversation={selectConversation}
+            />
+          </section>
 
           <section className="chat-main">
-            <ChatHeader />
-
             <section className="chat-panel panel">
-              <div className="chat-toolbar">
-                <div>
-                  <p className="toolbar-label">Historial</p>
-                  <p className="toolbar-caption">
-                    Mensajes enviados a la derecha y respuestas a la izquierda.
-                  </p>
-                </div>
-
-                <button className="ghost-button" type="button" onClick={clearMessages}>
-                  Limpiar
-                </button>
-              </div>
-
-              <ChatHistory messages={messages} />
+              <ChatHistory messages={messages} shouldAutoScroll={uiSettings.autoScrollEnabled} />
             </section>
 
             <ChatComposer
               draft={draft}
               isSending={isSending}
+              sendOnEnter={uiSettings.sendOnEnter}
               onDraftChange={setDraft}
               onSubmit={sendMessage}
             />
           </section>
         </div>
       </main>
+
+      <SettingsModal
+        isOpen={isSettingsOpen}
+        uiSettings={uiSettings}
+        availableModels={availableModels}
+        selectedModelId={selectedModelId}
+        selectedModel={selectedModel}
+        isLoadingModels={isLoadingModels}
+        errorMessage={modelsError}
+        onClose={closeSettings}
+        onSettingChange={updateUiSetting}
+        onSelectModel={selectModel}
+        onDownloadSelectedModel={downloadSelectedModel}
+        onRefreshModels={refreshModels}
+      />
     </div>
   );
 }

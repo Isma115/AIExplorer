@@ -62,6 +62,147 @@
                     "order_index": 1
                 }
             ]
+        },
+        "Historial de mensajes": {
+            "items": [
+                {
+                    "key": "region::/Users/ismaelmoraledalopez/Desktop/pruebas/AIExplorer/frontend/pages/home/components/ChatHistory.jsx::1:40:Componentes Pagina Inicio: listado de mensajes",
+                    "file_path": "/Users/ismaelmoraledalopez/Desktop/pruebas/AIExplorer/frontend/pages/home/components/ChatHistory.jsx",
+                    "file_rel_path": "frontend/pages/home/components/ChatHistory.jsx",
+                    "header": "Componentes Pagina Inicio: listado de mensajes",
+                    "type": "region",
+                    "name": "Componentes Pagina Inicio: listado de mensajes",
+                    "start_line": 1,
+                    "end_line": 40,
+                    "order_index": 0
+                },
+                {
+                    "key": "region::/Users/ismaelmoraledalopez/Desktop/pruebas/AIExplorer/frontend/pages/home/HomePage.jsx::9:56:Componentes Pagina Inicio: componente principal",
+                    "file_path": "/Users/ismaelmoraledalopez/Desktop/pruebas/AIExplorer/frontend/pages/home/HomePage.jsx",
+                    "file_rel_path": "frontend/pages/home/HomePage.jsx",
+                    "header": "Componentes Pagina Inicio: componente principal",
+                    "type": "region",
+                    "name": "Componentes Pagina Inicio: componente principal",
+                    "start_line": 9,
+                    "end_line": 56,
+                    "order_index": 1
+                },
+                {
+                    "key": "region::/Users/ismaelmoraledalopez/Desktop/pruebas/AIExplorer/frontend/pages/home/styles/home.css::1:53:Estilos Pagina Inicio: contenedor principal y ambiente",
+                    "file_path": "/Users/ismaelmoraledalopez/Desktop/pruebas/AIExplorer/frontend/pages/home/styles/home.css",
+                    "file_rel_path": "frontend/pages/home/styles/home.css",
+                    "header": "Estilos Pagina Inicio: contenedor principal y ambiente",
+                    "type": "region",
+                    "name": "Estilos Pagina Inicio: contenedor principal y ambiente",
+                    "start_line": 1,
+                    "end_line": 53,
+                    "order_index": 2
+                }
+            ]
+        },
+        "Encabezado principal de chat": {
+            "items": [
+                {
+                    "key": "region::/Users/ismaelmoraledalopez/Desktop/pruebas/AIExplorer/frontend/pages/home/components/ChatHeader.jsx::1:26:Componentes Pagina Inicio: encabezado del chat",
+                    "file_path": "/Users/ismaelmoraledalopez/Desktop/pruebas/AIExplorer/frontend/pages/home/components/ChatHeader.jsx",
+                    "file_rel_path": "frontend/pages/home/components/ChatHeader.jsx",
+                    "header": "Componentes Pagina Inicio: encabezado del chat",
+                    "type": "region",
+                    "name": "Componentes Pagina Inicio: encabezado del chat",
+                    "start_line": 1,
+                    "end_line": 26,
+                    "order_index": 0
+                },
+                {
+                    "key": "region::/Users/ismaelmoraledalopez/Desktop/pruebas/AIExplorer/frontend/pages/home/styles/home.css::175:265:Estilos Pagina Inicio: encabezado de la interfaz",
+                    "file_path": "/Users/ismaelmoraledalopez/Desktop/pruebas/AIExplorer/frontend/pages/home/styles/home.css",
+                    "file_rel_path": "frontend/pages/home/styles/home.css",
+                    "header": "Estilos Pagina Inicio: encabezado de la interfaz",
+                    "type": "region",
+                    "name": "Estilos Pagina Inicio: encabezado de la interfaz",
+                    "start_line": 175,
+                    "end_line": 265,
+                    "order_index": 1
+                }
+            ]
+        },
+        "Formulario enviar mensaje": {
+            "items": [
+                {
+                    "key": "region::/Users/ismaelmoraledalopez/Desktop/pruebas/AIExplorer/frontend/pages/home/components/ChatComposer.jsx::1:73:Componentes Pagina Inicio: formulario de envio",
+                    "file_path": "/Users/ismaelmoraledalopez/Desktop/pruebas/AIExplorer/frontend/pages/home/components/ChatComposer.jsx",
+                    "file_rel_path": "frontend/pages/home/components/ChatComposer.jsx",
+                    "header": "Componentes Pagina Inicio: formulario de envio",
+                    "type": "region",
+                    "name": "Componentes Pagina Inicio: formulario de envio",
+                    "start_line": 1,
+                    "end_line": 73,
+                    "order_index": 0
+                },
+                {
+                    "key": "region::/Users/ismaelmoraledalopez/Desktop/pruebas/AIExplorer/frontend/pages/home/styles/home.css::338:401:Estilos Pagina Inicio: formulario de envio",
+                    "file_path": "/Users/ismaelmoraledalopez/Desktop/pruebas/AIExplorer/frontend/pages/home/styles/home.css",
+                    "file_rel_path": "frontend/pages/home/styles/home.css",
+                    "header": "Estilos Pagina Inicio: formulario de envio",
+                    "type": "region",
+                    "name": "Estilos Pagina Inicio: formulario de envio",
+                    "start_line": 338,
+                    "end_line": 401,
+                    "order_index": 1
+                }
+            ]
+        },
+        "Panel de ajustes": {
+            "items": [
+                {
+                    "key": "region::/Users/ismaelmoraledalopez/Desktop/pruebas/AIExplorer/frontend/pages/home/components/SettingsPanel.jsx::1:110:Componentes Pagina Inicio: panel de ajustes",
+                    "file_path": "/Users/ismaelmoraledalopez/Desktop/pruebas/AIExplorer/frontend/pages/home/components/SettingsPanel.jsx",
+                    "file_rel_path": "frontend/pages/home/components/SettingsPanel.jsx",
+                    "header": "Componentes Pagina Inicio: panel de ajustes",
+                    "type": "region",
+                    "name": "Componentes Pagina Inicio: panel de ajustes",
+                    "start_line": 1,
+                    "end_line": 110,
+                    "order_index": 0
+                },
+                {
+                    "key": "region::/Users/ismaelmoraledalopez/Desktop/pruebas/AIExplorer/frontend/pages/home/styles/home.css::321:403:Estilos Pagina Inicio: panel de ajustes",
+                    "file_path": "/Users/ismaelmoraledalopez/Desktop/pruebas/AIExplorer/frontend/pages/home/styles/home.css",
+                    "file_rel_path": "frontend/pages/home/styles/home.css",
+                    "header": "Estilos Pagina Inicio: panel de ajustes",
+                    "type": "region",
+                    "name": "Estilos Pagina Inicio: panel de ajustes",
+                    "start_line": 321,
+                    "end_line": 403,
+                    "order_index": 1
+                }
+            ]
+        },
+        "Panel de ajuste de usuario": {
+            "items": [
+                {
+                    "key": "region::/Users/ismaelmoraledalopez/Desktop/pruebas/AIExplorer/frontend/pages/home/components/SidebarUserPanel.jsx::1:25:Componentes Pagina Inicio: cabecera lateral del usuario",
+                    "file_path": "/Users/ismaelmoraledalopez/Desktop/pruebas/AIExplorer/frontend/pages/home/components/SidebarUserPanel.jsx",
+                    "file_rel_path": "frontend/pages/home/components/SidebarUserPanel.jsx",
+                    "header": "Componentes Pagina Inicio: cabecera lateral del usuario",
+                    "type": "region",
+                    "name": "Componentes Pagina Inicio: cabecera lateral del usuario",
+                    "start_line": 1,
+                    "end_line": 25,
+                    "order_index": 0
+                },
+                {
+                    "key": "region::/Users/ismaelmoraledalopez/Desktop/pruebas/AIExplorer/frontend/pages/home/styles/home.css::66:138:Estilos Pagina Inicio: cabecera lateral del usuario",
+                    "file_path": "/Users/ismaelmoraledalopez/Desktop/pruebas/AIExplorer/frontend/pages/home/styles/home.css",
+                    "file_rel_path": "frontend/pages/home/styles/home.css",
+                    "header": "Estilos Pagina Inicio: cabecera lateral del usuario",
+                    "type": "region",
+                    "name": "Estilos Pagina Inicio: cabecera lateral del usuario",
+                    "start_line": 66,
+                    "end_line": 138,
+                    "order_index": 1
+                }
+            ]
         }
     }
 }

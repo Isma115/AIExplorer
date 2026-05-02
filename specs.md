@@ -9,4 +9,12 @@
 
 [TAREA 5] Cambia el aspecto visual de toda la página por un aspecto más moderno pero original similar a otros chat de IA como los de ChatGPT o Grok similares, implementa estilos modernos y limpios, pero originales.
 
+[TAREA 6] El panel lateral izquierdo tiene que estar completamente a la izquierda y con un margen izquierdo mínimo 
+
+[TAREA 7] Haz que los bordes de los componentes de la página sean menos redondeados y los colores generales de la web sean más oscuros suaves y agradables como un tono de gris muy suave similar al de otros chat de IA como los de ChatGPT o Grok similares
+
+[TAREA 8] Haz que el chat sea responsive y se adapte a diferentes tamaños de pantalla.
+
+[TAREA 9] Implementa un sistema de descarga de modelos de lenguaje para descargarse en local en una carpeta models, de momento la aplicación debe de estar vacía de modelos de lenguaje, puedes añadir modelos de lenguaje de pequeñas características para probar, por ejemplo Modelos de lenguaje para inferencia local GGUF. Entre los modelos de lenguaje disponibles mediante un selector deben estar Gemma 4, Phi-3.5 y Qwen 3.5 de 4B y 2B
+
 Si no has leido previamente Agent.md leelo y ajústate a todas las instrucciones que se dan.

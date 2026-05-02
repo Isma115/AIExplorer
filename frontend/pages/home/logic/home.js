@@ -5,6 +5,8 @@ import { useEffect, useMemo, useState } from "react";
 /* #region Logica Pagina Inicio: constantes del almacenamiento local */
 const conversationsStorageKey = "aiexplorer-home-conversations";
 const activeConversationStorageKey = "aiexplorer-home-active-conversation";
+const uiSettingsStorageKey = "aiexplorer-home-ui-settings";
+const modelsApiBaseUrl = import.meta.env.DEV ? "/api/models" : "http://localhost:3001/api/models";
 /* #endregion Logica Pagina Inicio: constantes del almacenamiento local */
 
 /* #region Logica Pagina Inicio: respuestas simuladas */
@@ -132,6 +134,72 @@ function loadInitialChatState() {
 }
 /* #endregion Logica Pagina Inicio: utilidades del chat */
 
+/* #region Logica Pagina Inicio: ajustes locales */
+function createDefaultUiSettings() {
+  return {
+    sendOnEnter: true,
+    autoScrollEnabled: true,
+    compactSidebar: false,
+    showConversationPreview: true,
+  };
+}
+
+function loadStoredUiSettings() {
+  const defaultUiSettings = createDefaultUiSettings();
+
+  if (typeof window === "undefined") {
+    return defaultUiSettings;
+  }
+
+  const rawSettings = window.localStorage.getItem(uiSettingsStorageKey);
+
+  if (!rawSettings) {
+    return defaultUiSettings;
+  }
+
+  try {
+    const parsedSettings = JSON.parse(rawSettings);
+    return {
+      ...defaultUiSettings,
+      ...parsedSettings,
+    };
+  } catch (_error) {
+    return defaultUiSettings;
+  }
+}
+/* #endregion Logica Pagina Inicio: ajustes locales */
+
+/* #region Logica Pagina Inicio: utilidades del catalogo de modelos */
+async function fetchModelCatalog() {
+  const response = await fetch(modelsApiBaseUrl);
+
+  if (!response.ok) {
+    throw new Error("No se pudo cargar el catalogo de modelos locales.");
+  }
+
+  const payload = await response.json();
+  return Array.isArray(payload.models) ? payload.models : [];
+}
+
+async function requestModelDownload(modelId) {
+  const response = await fetch(`${modelsApiBaseUrl}/download`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ modelId }),
+  });
+
+  const payload = await response.json().catch(() => ({}));
+
+  if (!response.ok) {
+    throw new Error(payload.error ?? "No se pudo iniciar la descarga del modelo.");
+  }
+
+  return payload;
+}
+/* #endregion Logica Pagina Inicio: utilidades del catalogo de modelos */
+
 /* #region Logica Pagina Inicio: hook de chat */
 export function useHomeChat() {
   const [initialChatState] = useState(() => loadInitialChatState());
@@ -141,12 +209,29 @@ export function useHomeChat() {
     initialChatState.initialActiveConversationId,
   );
   const [isSending, setIsSending] = useState(false);
+  const [uiSettings, setUiSettings] = useState(() => loadStoredUiSettings());
+  const [isSettingsOpen, setIsSettingsOpen] = useState(false);
+  const [availableModels, setAvailableModels] = useState([]);
+  const [selectedModelId, setSelectedModelId] = useState("");
+  const [isLoadingModels, setIsLoadingModels] = useState(true);
+  const [modelsError, setModelsError] = useState("");
+  const currentUser = {
+    name: "Usuario local",
+    email: "local@aiexplorer.dev",
+    initials: "UL",
+    statusLabel: "Sesion activa en este navegador",
+  };
   const activeConversation = useMemo(
     () =>
       conversations.find((conversation) => conversation.id === activeConversationId) ??
       conversations[0] ??
       null,
     [activeConversationId, conversations],
+  );
+  const selectedModel = useMemo(
+    () =>
+      availableModels.find((model) => model.id === selectedModelId) ?? availableModels[0] ?? null,
+    [availableModels, selectedModelId],
   );
   const messages = activeConversation?.messages ?? [];
 
@@ -175,6 +260,57 @@ export function useHomeChat() {
     window.localStorage.setItem(conversationsStorageKey, JSON.stringify(conversations));
     window.localStorage.setItem(activeConversationStorageKey, activeConversationId);
   }, [activeConversationId, conversations]);
+
+  useEffect(() => {
+    if (typeof window === "undefined") {
+      return;
+    }
+
+    window.localStorage.setItem(uiSettingsStorageKey, JSON.stringify(uiSettings));
+  }, [uiSettings]);
+
+  useEffect(() => {
+    let isCancelled = false;
+
+    async function loadModelCatalog() {
+      try {
+        const catalog = await fetchModelCatalog();
+
+        if (isCancelled) {
+          return;
+        }
+
+        setAvailableModels(catalog);
+        setModelsError("");
+        setSelectedModelId((currentModelId) => {
+          if (!catalog.length) {
+            return "";
+          }
+
+          const hasCurrentSelection = catalog.some((model) => model.id === currentModelId);
+          return hasCurrentSelection ? currentModelId : catalog[0].id;
+        });
+      } catch (error) {
+        if (isCancelled) {
+          return;
+        }
+
+        setModelsError(error.message);
+      } finally {
+        if (!isCancelled) {
+          setIsLoadingModels(false);
+        }
+      }
+    }
+
+    loadModelCatalog();
+    const pollingId = window.setInterval(loadModelCatalog, 3000);
+
+    return () => {
+      isCancelled = true;
+      window.clearInterval(pollingId);
+    };
+  }, []);
 
   function updateActiveConversationMessages(nextMessages) {
     setConversations((currentConversations) =>
@@ -242,9 +378,66 @@ export function useHomeChat() {
     setDraft("");
   }
 
+  function openSettings() {
+    setIsSettingsOpen(true);
+  }
+
+  function closeSettings() {
+    setIsSettingsOpen(false);
+  }
+
+  function updateUiSetting(settingKey, settingValue) {
+    setUiSettings((currentSettings) => ({
+      ...currentSettings,
+      [settingKey]: settingValue,
+    }));
+  }
+
+  function selectModel(modelId) {
+    setSelectedModelId(modelId);
+  }
+
+  async function refreshModels() {
+    setIsLoadingModels(true);
+
+    try {
+      const catalog = await fetchModelCatalog();
+      setAvailableModels(catalog);
+      setModelsError("");
+      setSelectedModelId((currentModelId) => {
+        if (!catalog.length) {
+          return "";
+        }
+
+        return catalog.some((model) => model.id === currentModelId)
+          ? currentModelId
+          : catalog[0].id;
+      });
+    } catch (error) {
+      setModelsError(error.message);
+    } finally {
+      setIsLoadingModels(false);
+    }
+  }
+
+  async function downloadSelectedModel() {
+    if (!selectedModel) {
+      return;
+    }
+
+    try {
+      setModelsError("");
+      await requestModelDownload(selectedModel.id);
+      await refreshModels();
+    } catch (error) {
+      setModelsError(error.message);
+    }
+  }
+
   return {
     draft,
     messages,
+    currentUser,
     conversations: conversations
       .slice()
       .sort((leftConversation, rightConversation) => rightConversation.updatedAt - leftConversation.updatedAt)
@@ -259,11 +452,23 @@ export function useHomeChat() {
       })),
     activeConversationId,
     isSending,
+    uiSettings,
+    availableModels,
+    selectedModelId,
+    selectedModel,
+    isLoadingModels,
+    modelsError,
+    isSettingsOpen,
     setDraft,
     sendMessage,
-    clearMessages,
     createConversation: createNewConversation,
     selectConversation,
+    updateUiSetting,
+    selectModel,
+    downloadSelectedModel,
+    refreshModels,
+    openSettings,
+    closeSettings,
   };
 }
 /* #endregion Logica Pagina Inicio: hook de chat */

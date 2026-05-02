@@ -1,7 +1,7 @@
 /* #region Componentes Pagina Inicio: formulario de envio */
 import { useEffect, useRef } from "react";
 
-export function ChatComposer({ draft, isSending, onDraftChange, onSubmit }) {
+export function ChatComposer({ draft, isSending, sendOnEnter, onDraftChange, onSubmit }) {
   const inputRef = useRef(null);
 
   function adjustTextareaHeight(textarea) {
@@ -20,7 +20,7 @@ export function ChatComposer({ draft, isSending, onDraftChange, onSubmit }) {
   }
 
   function handleKeyDown(event) {
-    if (event.key === "Enter" && !event.shiftKey) {
+    if (sendOnEnter && event.key === "Enter" && !event.shiftKey) {
       event.preventDefault();
       onSubmit();
     }
@@ -45,26 +45,28 @@ export function ChatComposer({ draft, isSending, onDraftChange, onSubmit }) {
           Escribe un mensaje
         </label>
 
-        <textarea
-          id="chat-input"
-          ref={inputRef}
-          className="composer-input"
-          placeholder="Escribe tu mensaje..."
-          rows="1"
-          value={draft}
-          onChange={handleChange}
-          onKeyDown={handleKeyDown}
-          onFocus={handleFocus}
-        ></textarea>
+        <div className="composer-input-container">
+          <textarea
+            id="chat-input"
+            ref={inputRef}
+            className="composer-input"
+            placeholder="Escribe tu mensaje..."
+            rows="1"
+            value={draft}
+            onChange={handleChange}
+            onKeyDown={handleKeyDown}
+            onFocus={handleFocus}
+          ></textarea>
+
+          <button className="send-button" type="submit" disabled={isSending}>
+            {isSending ? "..." : "Enviar"}
+          </button>
+        </div>
 
         <div className="composer-actions">
           <p className="composer-hint">
-            Enter envia. Shift + Enter crea una nueva linea.
+            {sendOnEnter ? "Enter envia. Shift + Enter para nueva linea." : "Enter inserta una nueva linea."}
           </p>
-
-          <button className="send-button" type="submit" disabled={isSending}>
-            {isSending ? "Enviando..." : "Enviar mensaje"}
-          </button>
         </div>
       </form>
     </section>
