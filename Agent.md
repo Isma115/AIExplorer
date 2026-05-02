@@ -22,7 +22,7 @@ Para el FrontEnd podemos tener varias páginas en la web, como index, dashboard,
 
 El objetivo principal es conseguir conocer dónde se ubica cada elemento atomizado del proyecto para así tener mayor conciencia de qué hace cada parte del mismo evitando que el tamaño de los ficheros de código crezcan enormemente y de forma descontrolada y al mismo tiempo evitar la sobremodularización innecesaria.
 
-Como apoyo y visualización mediante herramientas externas, cada sección del código debe estar delimitado por bloques de comentarios de regiones: region y endregion con un título relevante que describa la sección, de manera que pueda ser fácilmente identificable.
+Como apoyo y visualización mediante herramientas externas, cada sección del código debe estar delimitado por bloques de comentarios de regiones: region y endregion con un título relevante que describa la sección, (endregion no debe contener información extra simplemente endregion) de manera que pueda ser fácilmente identificable.
 
 La nomenclatura para nombrar las regiones es:
 
