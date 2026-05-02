@@ -49,3 +49,4 @@ AIExplorer/
 - `frontend`: interfaz de chat hecha con React, separada por pagina, componentes, logica y estilos. Toda la logica funcional actual del chat vive aqui.
 - `backend`: estructura reservada para futura gestion de base de datos mediante ORM. Sin logica activa mientras no exista persistencia.
 # AIExplorer
+# AIExplorer
